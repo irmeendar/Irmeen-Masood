@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Irmeen Masood – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f3f0e9;--ink:#17191d;--muted:#625f59;--line:#d2cec4;--accent:#ff4d27;--accent-ink:#c2310f;--card:#e7e3d9;--night:#17191d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#16181d;--ink:#f6f1e8;--muted:#b8b2a8;--line:#373b42;--accent:#ff7858;--accent-ink:#ff7858;--card:#22252b;--night:#f6f1e8}}
+:root[data-theme="dark"]{--paper:#16181d;--ink:#f6f1e8;--muted:#b8b2a8;--line:#373b42;--accent:#ff7858;--accent-ink:#ff7858;--card:#22252b;--night:#f6f1e8}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(90px + env(safe-area-inset-top,0px))}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;transition:background .35s,color .35s}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.page-width{width:min(100% - 48px,1320px);margin:0 auto}
+.mono{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.eyebrow{color:var(--muted);display:flex;align-items:center;gap:.65rem;margin:0}
+.eyebrow::before{content:"";width:18px;height:1px;background:currentColor}
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.header-row{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:"Fraunces",serif;font-size:1.2rem;font-weight:700;text-decoration:none}
+.brand-mark{color:var(--accent-ink);font-family:"Space Mono",monospace;font-size:.8rem;margin-right:6px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a{color:var(--muted);font-size:.88rem;font-weight:600;text-decoration:none}
+.nav-links a:hover,.nav-links a.is-active{color:var(--ink)}
+.nav-links a.is-active::after{content:"•";color:var(--accent-ink);margin-left:4px}
+.theme-button{display:inline-grid;place-items:center;width:38px;height:38px;border:1px solid var(--line);color:var(--ink);background:transparent;border-radius:50%;cursor:pointer}
+.theme-button:hover{border-color:var(--accent)}
+.theme-button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+
+.hero{padding:88px 0 96px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:34px;align-items:end;position:relative}
+.hero-kicker{margin:0 0 20px;color:var(--accent-ink);font-weight:700}
+.hero-title{margin:0;font-family:"Fraunces",serif;font-size:clamp(4.2rem,13vw,11.5rem);font-weight:600;letter-spacing:-.07em;line-height:.85}
+.hero-title span{display:block}
+.hero-title .offset{padding-left:clamp(20px,9vw,150px);color:var(--accent);font-style:italic}
+.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:48px}
+.descriptor-wrap{max-width:540px;min-height:78px}
+.descriptor{margin:0;display:none;font-size:clamp(1.25rem,2.1vw,1.85rem);font-weight:500;line-height:1.25}
+.descriptor.is-visible{display:block;animation:in .5s ease both}
+@keyframes in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.availability{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);padding:9px 14px;border-radius:999px;color:var(--muted);white-space:nowrap}
+.availability-dot{width:9px;height:9px;background:var(--accent);border-radius:50%;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(.7);opacity:.6}}
+.orbit{width:170px;aspect-ratio:1;border:1px solid var(--ink);border-radius:50%;position:relative;margin-left:auto;animation:turn 16s linear infinite}
+.orbit::before,.orbit::after{content:"";position:absolute;border-radius:50%}
+.orbit::before{width:30px;height:30px;top:-15px;left:62px;background:var(--accent)}
+.orbit::after{width:13px;height:13px;right:8px;bottom:30px;background:var(--ink)}
+@keyframes turn{to{transform:rotate(360deg)}}
+
+.section{border-top:1px solid var(--line);padding:104px 0}
+.section-head{display:grid;grid-template-columns:1fr 3fr;gap:30px;margin-bottom:44px}
+.section-title{margin:0;font-family:"Fraunces",serif;font-size:clamp(2.4rem,5vw,5rem);letter-spacing:-.06em;line-height:.95}
+
+.work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.project-card{grid-column:span 6;min-height:380px;padding:28px;border-radius:3px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--card)}
+.v1{grid-column:1/span 5;background:var(--night);color:var(--paper)}
+.v2{grid-column:6/span 7;margin-top:70px}
+.v3{grid-column:3/span 8;min-height:260px;background:var(--accent);color:#17191d}
+.project-img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:2px;margin-bottom:24px}
+.project-meta{display:flex;justify-content:space-between;gap:15px;margin-bottom:14px;opacity:.8}
+.project-card h3{margin:0;font-family:"Fraunces",serif;font-size:clamp(1.9rem,3vw,3.2rem);line-height:.98;letter-spacing:-.05em}
+.project-summary{margin:14px 0 0;max-width:46ch;font-size:1.05rem}
+.points{margin:18px 0 0;padding:0;list-style:none;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)}
+.points li{padding:11px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)}
+
+.about-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(40px,9vw,140px)}
+.about-copy{font-family:"Fraunces",serif;font-size:clamp(1.6rem,3vw,2.9rem);line-height:1.18;letter-spacing:-.04em;margin:0}
+.facts{border-top:1px solid var(--line);align-self:start}
+.fact{padding:16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:100px 1fr;gap:14px}
+.fact .mono{color:var(--accent-ink);padding-top:.25em}
+.fact p{margin:0}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;border-top:1px solid var(--line)}
+.timeline-item{padding:22px 26px 0 0;border-right:1px solid var(--line)}
+.timeline-item+.timeline-item{padding-left:26px}
+.timeline-item:last-child{border-right:0}
+.timeline-year{display:block;margin-bottom:22px;color:var(--accent-ink);font-weight:700}
+.timeline-role{margin:0;font-family:"Fraunces",serif;font-size:1.3rem;line-height:1.2}
+
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,9vw,140px)}
+.tool-cloud{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.tool{padding:10px 16px;border:1px solid var(--line);border-radius:999px;transition:border-color .2s,transform .2s}
+.tool:hover{border-color:var(--accent);transform:translateY(-3px)}
+
+.contact-section{background:var(--night);color:var(--paper);border-top:0}
+.contact-section .eyebrow,.contact-note,.contact-section .reach a,.contact-section .reach span{color:color-mix(in srgb,var(--paper) 72%,transparent)}
+.contact-link{display:inline-block;font-family:"Fraunces",serif;font-size:clamp(1.7rem,5.8vw,5.6rem);font-weight:600;letter-spacing:-.06em;line-height:1;color:var(--paper);text-decoration:none;word-break:break-word}
+.contact-link span{border-bottom:.08em solid var(--accent);transition:color .25s}
+.contact-link:hover span{color:var(--accent)}
+.contact-phone{margin-top:18px;font-size:clamp(1.4rem,4vw,3.4rem)}
+.contact-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-top:80px}
+.contact-note{margin:0}
+.reach{display:flex;flex-wrap:wrap;gap:22px}
+.reach a:hover{color:var(--paper)}
+.site-footer{padding:22px 0;color:var(--muted);font-size:.8rem}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.75,.2,1)}
+.reveal.is-visible{opacity:1;transform:none}
+
+@media (max-width:760px){
+  .page-width{width:min(100% - 32px,1320px)}
+  .nav-links a{display:none}
+  .hero{padding:64px 0 80px}
+  .hero-grid,.section-head,.about-layout,.skills-layout{grid-template-columns:1fr}
+  .section-head{gap:20px}
+  .orbit{position:absolute;width:110px;right:0;top:-30px;opacity:.7}
+  .hero-bottom,.contact-bottom{flex-direction:column;align-items:flex-start;margin-top:36px}
+  .section{padding:72px 0}
+  .project-card,.v1,.v2,.v3{grid-column:span 12;margin-top:0;min-height:300px}
+  .timeline{grid-template-columns:1fr;margin-top:56px}
+  .timeline-item,.timeline-item+.timeline-item{border-right:0;border-bottom:1px solid var(--line);padding:20px 0}
+  .timeline-year{margin-bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="page-width header-row">
+    <a class="brand" href="#top"><span class="brand-mark">IM/</span><span id="brand"></span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#work">Experience</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      <button id="theme-toggle" class="theme-button" type="button" aria-label="Switch between light and dark theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero page-width">
+    <div class="hero-grid">
+      <div>
+        <p class="hero-kicker mono" id="kicker"></p>
+        <h1 class="hero-title"><span id="first"></span><span class="offset" id="last"></span></h1>
+        <div class="hero-bottom">
+          <div class="descriptor-wrap" id="descs"></div>
+          <div class="availability mono"><span class="availability-dot" aria-hidden="true"></span><span id="loc"></span></div>
+        </div>
+      </div>
+      <div class="orbit" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section id="work" class="section"><div class="page-width">
+    <div class="section-head reveal"><p class="eyebrow mono">01 / Experience</p><h2 class="section-title">Work and experience.</h2></div>
+    <div class="work-grid" id="exp"></div>
+  </div></section>
+
+  <section id="about" class="section"><div class="page-width">
+    <div class="section-head reveal"><p class="eyebrow mono">02 / About me</p><h2 class="section-title">Student, editor, campaign manager.</h2></div>
+    <div class="about-layout reveal"><p class="about-copy" id="about-text"></p><div class="facts" id="facts"></div></div>
+    <div class="timeline reveal" id="timeline" aria-label="Education and work timeline"></div>
+  </div></section>
+
+  <section id="skills" class="section"><div class="page-width">
+    <div class="section-head reveal"><p class="eyebrow mono">03 / Skills</p><h2 class="section-title">What I do and what I use.</h2></div>
+    <div class="skills-layout reveal">
+      <div><p class="eyebrow mono">Skills</p><div class="tool-cloud" id="skill-list"></div></div>
+      <div><p class="eyebrow mono">Software</p><div class="tool-cloud" id="tools"></div></div>
+    </div>
+  </div></section>
+
+  <section id="contact" class="section contact-section"><div class="page-width">
+    <div class="section-head reveal"><p class="eyebrow mono">04 / Contact</p><h2 class="section-title">Let's work together.</h2></div>
+    <a class="contact-link reveal" id="email"><span></span></a><br>
+    <a class="contact-link contact-phone reveal" id="phone"><span></span></a>
+    <div class="contact-bottom reveal"><p class="contact-note" id="refs"></p><div class="reach" id="reach"></div></div>
+  </div></section>
+</main>
+
+<footer class="site-footer"><div class="page-width footer-row"><span id="copy"></span><span id="foot-loc"></span><a href="#top">Back to top ↑</a></div></footer>
+
+<script>
+/* Your photos. Keep these image files in the same folder as this page. */
+const IMAGES = {
+  icarus: "icarus.jpg",
+  uop: "department.jpg",
+  crest: "crest.jpg"
+};
+</script>
+<script>
+/* ============================================================
+   EDIT YOUR SITE HERE. Change the text between the quotes.
+   Everything below this block builds the page from it.
+   ============================================================ */
+const CONFIG = {
+  name: "Irmeen Masood",
+  kicker: "PORTFOLIO",
+  location: "Lahore, Pakistan",
+
+  // These lines rotate under your name.
+  descriptors: [
+    "Media student, videographer and video editor.",
+    "Public Relations and Advertising student at the University of the Punjab."
+  ],
+
+  about: "I'm a Public Relations and Advertising student at the University of the Punjab, passionate about photography, videography and digital content creation. I work at Icarus as a campaign manager and in the department media club as a videographer and video editor, building professional media experience and contributing to creative projects.",
+
+  facts: [
+    { label: "Based in",  text: "Lahore, Pakistan" },
+    { label: "Studying",  text: "Public Relations and Advertising, University of the Punjab" },
+    { label: "Working",   text: "At Icarus as a Campaign Manager" },
+    { label: "Also",      text: "Videographer and video editor, department media club" }
+  ],
+
+  // Add, remove or reorder. Leave "points" as [] if you don't need a list.
+  // "image" is optional: use IMAGES.icarus, IMAGES.uop, IMAGES.crest, or leave it out.
+  experience: [
+    { type: "Campaign management", when: "Current", title: "Campaign Manager, Icarus", text: "Currently working as a campaign manager at Icarus.", points: [],
+      image: IMAGES.icarus, imageAlt: "Icarus Marketing Solutions office sign" },
+    { type: "Videography and editing", when: "Current", title: "Videographer & Video Editor, Media Club", text: "Media Club, Department of Public Relations & Advertising.",
+      points: ["Covered departmental events", "Edited videos for media club content", "Assisted in content creation", "Worked with the media team on projects", "Managed video coverage for events"],
+      image: IMAGES.uop, imageAlt: "University of the Punjab crest beside the Department of Public Relations and Advertising scroll" },
+    { type: "Media projects", when: "Media Club", title: "University of the Punjab collaboration", text: "Collaborated with the University of the Punjab on media projects and event coverage.", points: [],
+      image: IMAGES.crest, imageAlt: "University of the Punjab crest in front of the university building" }
+  ],
+
+  timeline: [
+    { when: "2023-2025", text: "Intermediate (I.Com), Superior Group of Colleges. Completed." },
+    { when: "2025-2029", text: "Bachelor's in Public Relations and Advertising, University of the Punjab. Currently studying." },
+    { when: "Now", text: "Campaign Manager at Icarus, and videographer and video editor in the media club." }
+  ],
+
+  skills: ["Photography", "Videography", "Video editing", "Graphic designing (learning)", "Creative writing", "Content creation", "Media coverage", "Team collaboration"],
+  tools:  ["CapCut", "Vegas Pro 18", "Wink", "Snapseed", "Adobe Lightroom", "Creatify.ai", "HeyGen"],
+
+  contact: { email: "irmeen.m.dar@gmail.com", phone: "0330-4233163" },
+  references: "References available upon request."
+};
+/* ================== END OF EDITABLE SECTION ================== */
+
+(function () {
+  const $ = id => document.getElementById(id);
+  const el = (tag, text, cls) => { const e = document.createElement(tag); if (text) e.textContent = text; if (cls) e.className = cls; return e; };
+  const C = CONFIG, root = document.documentElement;
+
+  document.title = C.name + " – " + C.kicker;
+  $("brand").textContent = C.name;
+  const parts = C.name.split(" ");
+  $("first").textContent = parts[0];
+  $("last").textContent = parts.slice(1).join(" ");
+  $("kicker").textContent = C.kicker;
+  $("loc").textContent = C.location;
+  $("foot-loc").textContent = C.location;
+  $("copy").textContent = "© " + new Date().getFullYear() + " " + C.name;
+  $("about-text").textContent = C.about;
+  $("refs").textContent = C.references;
+
+  const descs = C.descriptors.map((t, i) => { const p = el("p", t, "descriptor" + (i ? "" : " is-visible")); $("descs").appendChild(p); return p; });
+  if (descs.length > 1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let i = 0;
+    setInterval(() => { descs[i].classList.remove("is-visible"); i = (i + 1) % descs.length; descs[i].classList.add("is-visible"); }, 3400);
+  }
+
+  C.experience.forEach((x, i) => {
+    const a = el("article", "", "project-card reveal v" + ((i % 3) + 1));
+    if (x.image) { const im = el("img", "", "project-img"); im.src = x.image; im.alt = x.imageAlt || x.title; im.loading = "lazy"; a.appendChild(im); }
+    const meta = el("div", "", "project-meta mono");
+    meta.append(el("span", x.type), el("span", x.when));
+    a.append(meta, el("h3", x.title), el("p", x.text, "project-summary"));
+    if (x.points && x.points.length) { const ul = el("ul", "", "points"); x.points.forEach(p => ul.appendChild(el("li", p))); a.appendChild(ul); }
+    $("exp").appendChild(a);
+  });
+
+  C.facts.forEach(f => { const r = el("div", "", "fact"); r.append(el("span", f.label, "mono"), el("p", f.text)); $("facts").appendChild(r); });
+  C.timeline.forEach(t => { const r = el("div", "", "timeline-item"); r.append(el("span", t.when, "timeline-year mono"), el("p", t.text, "timeline-role")); $("timeline").appendChild(r); });
+  C.skills.forEach(s => $("skill-list").appendChild(el("span", s, "tool")));
+  C.tools.forEach(s => $("tools").appendChild(el("span", s, "tool")));
+
+  const mail = $("email"); mail.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(C.contact.email); mail.target = "_blank"; mail.rel = "noopener noreferrer"; mail.firstChild.textContent = C.contact.email;
+  const tel = $("phone"); const num = C.contact.phone.replace(/[^\d+]/g, ""); tel.href = "tel:" + (num.startsWith("0") ? "+92" + num.slice(1) : num); tel.firstChild.textContent = C.contact.phone;
+
+  $("theme-toggle").addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+  });
+
+  const revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); } }), { threshold: 0.1 });
+    revealEls.forEach(e => io.observe(e));
+  } else revealEls.forEach(e => e.classList.add("is-visible"));
+
+  const links = [...document.querySelectorAll(".nav-links a")];
+  if ("IntersectionObserver" in window) {
+    const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(l => l.classList.toggle("is-active", l.getAttribute("href") === "#" + e.target.id)); }), { rootMargin: "-35% 0px -55% 0px" });
+    ["work", "about", "skills", "contact"].forEach(id => so.observe($(id)));
+  }
+})();
+</script>
+</body>
+</html>
